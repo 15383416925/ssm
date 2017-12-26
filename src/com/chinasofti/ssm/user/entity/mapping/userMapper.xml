@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="userMapper">
+	<insert id="usergister" parameterType="com.chinasofti.ssm.user.entity.EUser">
+		INSERT INTO USERS VALUES(null,#{usernameString},#{passwordString})
+	</insert>
+	<select id="userlogin" parameterType="com.chinasofti.ssm.user.entity.EUser" resultType="com.chinasofti.ssm.user.entity.EUser">
+		SELECT username as usernameString,password as passwordString FROM USERS WHERE username=#{usernameString} AND password =#{passwordString}
+	</select>
+
+</mapper>
